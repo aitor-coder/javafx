@@ -44,6 +44,14 @@ public class KautotuKud implements Initializable {
             mainApp.mainErakutsi();
         }
     }
+    @FXML
+    void ezabatu_guztia(ActionEvent event) {
+        String aukera=comboZerbitzua.getValue().toString();
+        comboZerbitzua.getItems().remove(aukera);
+        ZerbitzuKud zk=ZerbitzuKud.getInstance();
+        zk.ezabatu_dbs(aukera);
+
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
